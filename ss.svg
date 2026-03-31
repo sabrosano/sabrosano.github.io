@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 180" fill="none">
+  <g transform="translate(177 8)">
+    <path
+      d="M33.5 31.5C23.5 42.5 18 57.5 18 76"
+      stroke="#EB43A7"
+      stroke-width="4"
+      stroke-linecap="round"
+    />
+    <path
+      d="M34.5 31.5C43.5 42.5 51 56 59 74"
+      stroke="#EB43A7"
+      stroke-width="4"
+      stroke-linecap="round"
+    />
+    <path
+      d="M34 31C24 29 15 21 12 11C23 12 32 18 34 31Z"
+      stroke="#EB43A7"
+      stroke-width="3.5"
+      stroke-linejoin="round"
+    />
+    <path
+      d="M34 31C44 29 53 21 56 11C45 12 36 18 34 31Z"
+      stroke="#EB43A7"
+      stroke-width="3.5"
+      stroke-linejoin="round"
+    />
+    <path
+      d="M22 15L31 24"
+      stroke="#EB43A7"
+      stroke-width="3"
+      stroke-linecap="round"
+    />
+    <path
+      d="M46 15L37 24"
+      stroke="#EB43A7"
+      stroke-width="3"
+      stroke-linecap="round"
+    />
+    <path
+      d="M25 82C25 94.15 15.15 104 3 104C-9.15 104 -19 94.15 -19 82C-19 69.85 -9.15 60 3 60C10.18 60 16.55 63.44 20.56 68.75C23.37 72.39 25 77 25 82Z"
+      fill="#EB43A7"
+      transform="translate(18 6)"
+    />
+    <path
+      d="M25 82C25 94.15 15.15 104 3 104C-9.15 104 -19 94.15 -19 82C-19 69.85 -9.15 60 3 60C10.18 60 16.55 63.44 20.56 68.75C23.37 72.39 25 77 25 82Z"
+      fill="#EB43A7"
+      transform="translate(62 6)"
+    />
+  </g>
+  <text
+    x="210"
+    y="120"
+    text-anchor="middle"
+    fill="#111111"
+    font-size="48"
+    font-family="Georgia, 'Times New Roman', serif"
+    letter-spacing="0.5"
+  >
+    SabroSano
+  </text>
+  <text
+    x="210"
+    y="154"
+    text-anchor="middle"
+    fill="#111111"
+    font-size="21"
+    font-family="Georgia, 'Times New Roman', serif"
+    letter-spacing="1.8"
+  >
+    Nutrición y Bienestar Integral
+  </text>
+</svg>
