@@ -21,7 +21,7 @@
     <div class="container header-inner glass-bar">
       <a class="brand" href="#inicio">
         <img
-          src="sabrosano-icon.svg"
+          src="src/sabrosano-icon.svg"
           alt="SabroSano icon"
           class="brand__logo"
         >
@@ -70,23 +70,27 @@
           </div>
 
           <div class="hero-visual">
-            <figure class="hero-image-card glass-card">
-              <img
-                src="335e6cc4-9477-41d1-b7d0-d0e5874081f5.jfif"
-                alt="Imagen principal de sabrosano"
-                class="hero-image"
-              >
-            </figure>
-            <aside class="hero-card glass-card">
-              <p class="card-label">En consulta trabajamos</p>
-              <ul>
-                <li>Salud digestiva y hormonal</li>
-                <li>Procesos inflamatorios</li>
-                <li>Pérdida de grasa y masa muscular</li>
-                <li>Hábitos sostenibles y más energía</li>
-              </ul>
-            </aside>
-          </div>
+          <figure class="hero-image-card glass-card carousel-container">
+            <div class="carousel-track" id="carouselTrack">
+              <img src="images/335e6cc4-9477-41d1-b7d0-d0e5874081f5.jfif" alt="Sabrosano 1" class="hero-image">
+              <img src="images/foto_2.jpeg" alt="Sabrosano 2" class="hero-image">
+              <img src="images/foto_3.jpeg" alt="Sabrosano 3" class="hero-image">
+              <img src="images/foto_4.jpeg" alt="Sabrosano 4" class="hero-image">
+              </div>
+
+            <div class="carousel-dots" id="carouselDots"></div>
+          </figure>
+
+          <aside class="hero-card glass-card">
+            <p class="card-label">En consulta trabajamos</p>
+            <ul>
+              <li>Salud digestiva y hormonal</li>
+              <li>Procesos inflamatorios</li>
+              <li>Pérdida de grasa y masa muscular</li>
+              <li>Hábitos sostenibles y más energía</li>
+            </ul>
+          </aside>
+        </div>
         </div>
       </div>
     </section>
@@ -207,7 +211,7 @@ Mi enfoque se basa en una nutrición consciente e integral, entendiendo que la a
       <div class="footer-top">
         <div class="footer-brand reveal">
           <img
-            src="sabrosano-lockup.svg"
+            src="src/sabrosano-lockup.svg"
             alt="SabroSano Nutrición y Bienestar Integral"
             class="footer-logo"
           >

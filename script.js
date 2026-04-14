@@ -93,3 +93,47 @@ if ("IntersectionObserver" in window) {
   // Fallback si el navegador es muy antiguo
   revealTargets.forEach((element) => element.classList.add("is-visible"));
 }
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const track = document.getElementById('carouselTrack');
+    const images = track.querySelectorAll('img');
+    const dotsContainer = document.getElementById('carouselDots');
+    let currentIndex = 0;
+
+    // Create dots based on number of images
+    images.forEach((_, i) => {
+        const dot = document.createElement('div');
+        dot.classList.add('dot');
+        if (i === 0) dot.classList.add('active');
+        dot.addEventListener('click', () => goToSlide(i));
+        dotsContainer.appendChild(dot);
+    });
+
+    const dots = document.querySelectorAll('.dot');
+
+    function updateDots() {
+        dots.forEach((dot, i) => {
+            dot.classList.toggle('active', i === currentIndex);
+        });
+    }
+
+    function goToSlide(index) {
+        currentIndex = index;
+        track.style.transform = `translateX(-${currentIndex * 100}%)`;
+        updateDots();
+    }
+
+    function nextSlide() {
+        currentIndex = (currentIndex + 1) % images.length;
+        goToSlide(currentIndex);
+    }
+
+    // Auto-play every 5 seconds
+    let timer = setInterval(nextSlide, 2500);
+
+    // Pause on hover
+    const container = document.querySelector('.carousel-container');
+    container.addEventListener('mouseenter', () => clearInterval(timer));
+    container.addEventListener('mouseleave', () => timer = setInterval(nextSlide, 5000));
+});
