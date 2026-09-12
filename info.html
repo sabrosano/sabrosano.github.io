@@ -154,10 +154,55 @@
       font-family: "Manrope", sans-serif !important;
       font-size: 0.88rem !important;
       line-height: 1.55;
+      animation: formFeedback 0.55s var(--ease-smooth) both;
     }
 
     .brevo-form .sib-form-message-panel a {
       color: inherit;
+    }
+
+    .brevo-form button.sib-form-block__button {
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.35s var(--ease-smooth), box-shadow 0.35s var(--ease-smooth), opacity 0.35s ease;
+    }
+
+    .brevo-form button.sib-form-block__button:hover,
+    .brevo-form button.sib-form-block__button:focus-visible {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 28px rgba(189, 107, 141, 0.18);
+    }
+
+    .brevo-form button.sib-form-block__button:disabled {
+      cursor: wait;
+      opacity: 0.72;
+      transform: none;
+    }
+
+    .brevo-form button.sib-form-block__button svg {
+      width: 1rem;
+      height: 1rem;
+      margin-right: 0.45rem;
+      vertical-align: -0.15em;
+      fill: currentColor;
+    }
+
+    @keyframes formFeedback {
+      from {
+        opacity: 0;
+        transform: translateY(10px) scale(0.98);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .brevo-form .sib-form-message-panel {
+        animation: none;
+      }
     }
 
     @media (max-width: 820px) {
@@ -364,6 +409,9 @@
 
                   <div class="sib-form-block">
                     <button class="sib-form-block__button sib-form-block__button-with-loader" form="sib-form" type="submit">
+                      <svg class="icon clickable__icon progress-indicator__icon sib-hide-loader-icon" viewBox="0 0 512 512" aria-hidden="true">
+                        <path d="M460.116 373.846l-20.823-12.022c-5.541-3.199-7.54-10.159-4.663-15.874 30.137-59.886 28.343-131.6 2-189.946-33.641-58.394-94.896-95.833-161.827-99.676C261.028 55.961 256 50.751 256 44.352V20.309c0-6.904 5.808-12.337 12.703-11.982 83.556 4.306 160.163 50.864 202.11 123.677 42.063 72.696 44.079 162.316 6.031 236.832-3.14 6.148-10.705 8.461-16.728 5.01z" />
+                      </svg>
                       SUSCRIBIRSE
                     </button>
                   </div>
