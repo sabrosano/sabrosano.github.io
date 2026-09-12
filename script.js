@@ -97,6 +97,8 @@ if ("IntersectionObserver" in window) {
 
 document.addEventListener('DOMContentLoaded', () => {
     const track = document.getElementById('carouselTrack');
+  if (!track) return;
+
     const images = track.querySelectorAll('img');
     const dotsContainer = document.getElementById('carouselDots');
     let currentIndex = 0;
