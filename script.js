@@ -56,39 +56,6 @@ if ("IntersectionObserver" in window) {
 
   revealTargets.forEach((element) => revealObserver.observe(element));
 
-  // 3. NUEVO: Observador para el efecto "Foco" (secciones) - Evita el overload
-  const sections = document.querySelectorAll("main section, main .hero");
-  
-  const sectionFocusObserver = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          // La sección entra en foco: 100% visible y activa
-          entry.target.style.opacity = "1";
-          entry.target.style.transform = "scale(1)";
-          entry.target.style.transition = "opacity 0.7s ease-out, transform 0.7s ease-out";
-          entry.target.style.pointerEvents = "auto"; 
-        } else {
-          // La sección sale de foco: se difumina y se aleja levemente
-          entry.target.style.opacity = "0.15"; 
-          entry.target.style.transform = "scale(0.97)";
-          entry.target.style.transition = "opacity 0.7s ease-out, transform 0.7s ease-out";
-          entry.target.style.pointerEvents = "none"; 
-        }
-      });
-    },
-    {
-      threshold: 0.40, // Se activa cuando casi la mitad de la sección está visible
-    }
-  );
-
-  sections.forEach((section) => {
-    // Estado inicial atenuado antes de empezar a hacer scroll
-    section.style.opacity = "0.25";
-    section.style.transform = "scale(0.97)";
-    sectionFocusObserver.observe(section);
-  });
-
 } else {
   // Fallback si el navegador es muy antiguo
   revealTargets.forEach((element) => element.classList.add("is-visible"));

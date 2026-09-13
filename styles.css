@@ -427,21 +427,49 @@ li {
 }
 
 .contact-section {
-  padding-bottom: 4rem;
+  padding: 7rem 0 4rem;
+  scroll-margin-top: 1rem;
+}
+
+.contact-section > .container {
+  width: min(calc(100% - 1.5rem), 90rem);
 }
 
 .contact-box {
+  grid-template-columns: 1fr;
   padding: 1.6rem;
+  text-align: center;
+}
+
+.contact-box > .reveal:first-child {
+  max-width: 44rem;
+  margin: 0 auto;
+}
+
+.booking-intro {
+  width: 100%;
+  text-align: center;
+}
+
+.booking-intro h2,
+.booking-intro p {
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .booking-panel {
   min-width: 0;
+  width: 100%;
 }
 
 .cal-inline {
+  display: block;
   width: 100%;
-  min-height: 650px;
-  overflow: auto;
+  height: min(82vh, 820px);
+  min-height: 680px;
+  border: 0;
+  border-radius: 18px;
+  background: #fff;
 }
 
 .booking-fallback {
@@ -719,6 +747,15 @@ li {
   .glass-section,
   .contact-box {
     padding: 1.35rem;
+  }
+
+  .contact-section > .container {
+    width: min(calc(100% - 1rem), 90rem);
+  }
+
+  .cal-inline {
+    height: 760px;
+    min-height: 0;
   }
 
   .hero {

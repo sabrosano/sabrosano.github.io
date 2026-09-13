@@ -98,7 +98,7 @@
 
     <section class="section" id="sobre-mi">
       <div class="container simple-grid glass-section">
-        <div class="reveal">
+        <div class="booking-intro reveal">
           <p class="eyebrow">Sobre mí</p>
           <h2>Acompañamiento nutricional con mirada clínica y humana.</h2>
         </div>
@@ -201,11 +201,13 @@ Mi enfoque se basa en una nutrición consciente e integral, entendiendo que la a
           </p>
         </div>
         <div class="booking-panel reveal" data-reveal-delay="120">
-          <div
-            id="my-cal-inline-consulta"
+          <iframe
             class="cal-inline"
-            data-cal-link="luis-ibanez-mmttul/30min"
-          ></div>
+            src="https://cal.com/luis-ibanez-mmttul/30min?embed=true"
+            title="Agendar consulta nutricional"
+            loading="eager"
+            allow="payment"
+          ></iframe>
           <p class="booking-fallback">
             ¿Prefieres coordinarlo directamente?
             <a href="https://wa.me/34658121348" target="_blank" rel="noreferrer">Escribir por WhatsApp</a>
@@ -241,29 +243,6 @@ Mi enfoque se basa en una nutrición consciente e integral, entendiendo que la a
       </div>
     </div>
   </footer>
-  <link rel="stylesheet" href="https://cal.com/embed/embed.css">
-  <script src="https://cal.com/embed/embed.js" async></script>
-  <script>
-    window.addEventListener("load", function () {
-      Cal("init");
-      Cal("inline", {
-        elementOrSelector: "#my-cal-inline-consulta",
-        calLink: "luis-ibanez-mmttul/30min",
-        config: {
-          layout: "month_view",
-          theme: "light"
-        }
-      });
-      Cal("ui", {
-        styles: {
-          branding: {
-            brandColor: "#bd6b8d"
-          }
-        },
-        hideEventTypeDetails: false
-      });
-    });
-  </script>
   <script src="script.js"></script>
 </body>
 </html>
