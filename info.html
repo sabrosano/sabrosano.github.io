@@ -100,7 +100,7 @@
       font-size: 0.92rem !important;
     }
 
-    .brevo-form .sib-sms-input-wrapper {
+    .brevo-form .phone-fields {
       display: grid;
       grid-template-columns: 7.5rem 1fr;
       gap: 0.55rem;
@@ -305,7 +305,8 @@
             <div id="sib-form-container" class="sib-form-container">
               <div id="error-message" class="sib-form-message-panel">
                 <div class="sib-form-message-panel__text sib-form-message-panel__text--center">
-                  No hemos podido validar tu suscripción.
+                  Muchas gracias por suscribirte. Comprueba tu correo para más información.
+                  Revisa la carpeta de Spam por si acaso.
                 </div>
               </div>
               <div id="success-message" class="sib-form-message-panel">
@@ -345,12 +346,16 @@
                   <div class="sib-input sib-form-block">
                     <div class="form__entry entry_block">
                       <label class="entry__label" for="SMS" data-required="*">Introduce tu teléfono</label>
-                      <div class="entry__field">
-                        <input type="tel" class="input" id="SMS" name="SMS" autocomplete="tel" placeholder="Teléfono (con prefijo, ej. 34658121348)" data-required="true" required>
+                      <div class="phone-fields">
+                        <div class="entry__field">
+                          <input type="text" class="input" id="SMS_COUNTRY_CODE" name="SMS__COUNTRY_CODE" autocomplete="tel-country-code" inputmode="tel" pattern="\+[0-9]{1,4}" value="+34" placeholder="+34" data-required="true" required aria-label="Prefijo del país">
+                        </div>
+                        <div class="entry__field">
+                          <input type="tel" class="input" id="SMS" name="SMS" autocomplete="tel-national" inputmode="numeric" pattern="[0-9]{6,15}" placeholder="Número de teléfono" data-required="true" required>
+                        </div>
                       </div>
-                      <input type="hidden" name="SMS__COUNTRY_CODE" value="+34">
                       <label class="entry__error entry__error--primary"></label>
-                      <label class="entry__specification">Escribe el número con prefijo de país, por ejemplo: 34658121348.</label>
+                      <label class="entry__specification">Indica el prefijo de tu país y después tu número, sin espacios ni símbolos.</label>
                     </div>
                   </div>
 
@@ -453,6 +458,20 @@
     </div>
   </footer>
 
+  <script>
+    document.querySelector('#sib-form')?.addEventListener('submit', () => {
+      const phone = document.querySelector('#SMS');
+      if (!phone) return;
+
+      const countryCode = document.querySelector('#SMS_COUNTRY_CODE');
+      let code = countryCode.value.replace(/\D/g, '');
+      let digits = phone.value.replace(/\D/g, '');
+      if (code.startsWith('00')) code = code.slice(2);
+      if (digits.startsWith(code)) digits = digits.slice(code.length);
+      countryCode.value = `+${code}`;
+      phone.value = digits;
+    });
+  </script>
   <script>
     window.REQUIRED_CODE_ERROR_MESSAGE = 'Elige un código de país';
     window.LOCALE = 'es';

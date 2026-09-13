@@ -194,14 +194,22 @@ Mi enfoque se basa en una nutrición consciente e integral, entendiendo que la a
       <div class="container contact-box glass-panel">
         <div class="reveal">
           <p class="eyebrow">Cómo agendar</p>
-          <h2>Reserva tu consulta en pocos pasos.</h2>
+          <h2>Reserva tu consulta.</h2>
+          <p>
+            Elige el día y la hora que mejor te vengan. Recibirás la confirmación
+            y los detalles de la consulta por correo electrónico.
+          </p>
         </div>
-        <div class="text-block reveal" data-reveal-delay="120">
-          <p class="reveal-child">1. Acordamos el día y la hora que mejor te venga. Puede haber una espera de 1 a 2 semanas.</p>
-          <p class="reveal-child">2. Realiza el anticipo del 50% de la consulta.</p>
-          <p class="reveal-child">3. Envía el comprobante por Instagram a @sabrosano.p o por WhatsApp al +34 658 121 348.</p>
-          <p class="reveal-child">4. Y listo, comenzamos tu consulta nutricional.</p>
-          <a class="button reveal-child" href="https://wa.me/34658121348" target="_blank" rel="noreferrer">Escribir por WhatsApp</a>
+        <div class="booking-panel reveal" data-reveal-delay="120">
+          <div
+            id="my-cal-inline-consulta"
+            class="cal-inline"
+            data-cal-link="luis-ibanez-mmttul/30min"
+          ></div>
+          <p class="booking-fallback">
+            ¿Prefieres coordinarlo directamente?
+            <a href="https://wa.me/34658121348" target="_blank" rel="noreferrer">Escribir por WhatsApp</a>
+          </p>
         </div>
       </div>
     </section>
@@ -233,6 +241,29 @@ Mi enfoque se basa en una nutrición consciente e integral, entendiendo que la a
       </div>
     </div>
   </footer>
+  <link rel="stylesheet" href="https://cal.com/embed/embed.css">
+  <script src="https://cal.com/embed/embed.js" async></script>
+  <script>
+    window.addEventListener("load", function () {
+      Cal("init");
+      Cal("inline", {
+        elementOrSelector: "#my-cal-inline-consulta",
+        calLink: "luis-ibanez-mmttul/30min",
+        config: {
+          layout: "month_view",
+          theme: "light"
+        }
+      });
+      Cal("ui", {
+        styles: {
+          branding: {
+            brandColor: "#bd6b8d"
+          }
+        },
+        hideEventTypeDetails: false
+      });
+    });
+  </script>
   <script src="script.js"></script>
 </body>
 </html>

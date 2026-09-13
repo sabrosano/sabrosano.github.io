@@ -434,6 +434,28 @@ li {
   padding: 1.6rem;
 }
 
+.booking-panel {
+  min-width: 0;
+}
+
+.cal-inline {
+  width: 100%;
+  min-height: 650px;
+  overflow: auto;
+}
+
+.booking-fallback {
+  margin: 0.85rem 0 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.booking-fallback a {
+  color: var(--accent-dark);
+  font-weight: 800;
+}
+
 /* =========================================
    FOOTER COMPACTO (DESKTOP)
    ========================================= */
